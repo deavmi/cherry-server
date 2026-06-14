@@ -1,4 +1,4 @@
-FROM debian:bookworm AS build
+FROM debian:latest AS build
 
 RUN apt update
 RUN apt upgrade -y
@@ -11,7 +11,7 @@ COPY . .
 
 RUN cargo build --release
 
-FROM debian:bookworm AS base
+FROM debian:latest AS base
 COPY --from=build /src/target/release/cherry-server /bin
 RUN chmod +x /bin/cherry-server
 ENTRYPOINT /bin/cherry-server
