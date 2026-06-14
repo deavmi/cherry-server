@@ -5,6 +5,7 @@ RUN apt upgrade -y
 
 RUN apt install cargo -y
 RUN apt install pkg-config -y
+RUN apt install openssl-dev -y
 
 RUN mkdir /src
 WORKDIR  /src
