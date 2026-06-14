@@ -4,6 +4,7 @@ RUN apt update
 RUN apt upgrade -y
 
 RUN apt install cargo -y
+RUN apt install pkg-config -y
 
 RUN mkdir /src
 WORKDIR  /src
