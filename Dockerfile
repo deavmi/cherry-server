@@ -17,3 +17,4 @@ FROM debian:latest AS base
 COPY --from=build /src/target/release/cherry-server /bin
 RUN chmod +x /bin/cherry-server
 ENTRYPOINT /bin/cherry-server
+CMD --config "/config.toml"
